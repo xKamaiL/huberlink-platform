@@ -89,6 +89,7 @@ create table device_ir_remote_virtual_keys
     name       text not null,
     kind       text not null,
     icon       text not null,
+    properties jsonb       default '{}'::jsonb,
     created_at timestamptz default now(),
     updated_at timestamptz default now()
 );

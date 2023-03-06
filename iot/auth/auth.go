@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgxpool"
 
 	"github.com/xkamail/huberlink-platform/iot/account"
 	"github.com/xkamail/huberlink-platform/pkg/api"
@@ -23,12 +22,6 @@ import (
 
 // 7 Days
 const _refreshTokenLifetime = 24 * time.Hour * 7
-
-type Service struct {
-	db        *pgxpool.Pool
-	jwtSecret string
-	discord   discord.Client
-}
 
 type TokenResponse struct {
 	Token        string `json:"token"`
